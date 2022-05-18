@@ -11,8 +11,8 @@ import MusicNFTMarketplaceAddress from '../contractsData/MusicNFTMarketplace-add
 import { Spinner, Navbar, Nav, Button, Container } from 'react-bootstrap'
 import logo from './logo.png'
 import Home from './Home.js'
-//import MyTokens from './MyTokens.js'
-//import MyResales from './MyResales.js'
+import MyTokens from './MyTokens.js'
+import MyResales from './MyResales.js'
 import './App.css';
 
 function App() {
@@ -83,8 +83,12 @@ function App() {
               <Route path="/" element={
                 <Home contract={contract} />
               } />
-              <Route path="/my-tokens" />
-              <Route path="/my-resales" />
+              <Route path="/my-tokens" element={
+                <MyTokens contract={contract} />
+              } />
+              <Route path="/my-resales" element={
+                <MyResales contract={contract} />
+              } />
             </Routes>
           )}
         </div>
